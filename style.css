@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*RESETS*/
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+/*COLORS*/
+:root {
+  --background: #edf8ff;
+  --tarefas: #99d8ff;
+  --main: #38b6ff;
+  --check: #0095f1;
+  --limpar: #ff7070;
+  --limpar-shadowbox: #d10000;
+  --titulo-degrade-1: #0069a6;
+  --titulo-degrade-2: #00e8ff;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--background);
+}
+
+
+/*
+___________________ H E A D E R ______________________
+_____________________ ⬇ ⬇ ⬇ __________________________
+*/
+
+header{
+    background-color: var(--main);
+    padding: 0.9rem;
+}
+
+header nav ul img{
+    width: 30px;
+    cursor: pointer;
+}
+
+header nav ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: .2s ease;
+}
+
+header nav ul li:hover {
+    transform: scale(1.05);
+    background-color: var(--tarefas);
+}
+
+header nav ul li:active {
+    transform: scale(0.95);
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 30px 0 30px;
+}
+
+/*
+_____________________ M A I N ________________________
+_____________________ ⬇ ⬇ ⬇ __________________________
+*/
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .main-title-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+main .main-title-container img{
+    width: 23px;
+    height: 23px;
+}
