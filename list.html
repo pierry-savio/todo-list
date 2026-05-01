@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List</title>
+    <link rel="stylesheet" href="./css/list.css">
+
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="">
+                    <li><img src="./icons/moon.png" alt=""></li>
+                </a>
+
+                <a href="index.html">
+                    <li><img src="./icons/plus.png" alt=""></li>
+                </a>
+
+                <a href="list.html">
+                    <li><img src="./icons/paper.png" alt=""></li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="main-title-container">
+                <h1>TAREFAS</h1>
+                <img src="./icons/blue-list.png" alt="check icon">
+            </div>
+
+            <div class="tasks-container">
+
+                <!--TASK-->
+                <div class="task closed" id="task1">
+                    <div class="task-header">
+                        <h2 class="taskt-title" onclick="clickTask(1)">Estudar HTML</h2>
+                        <img src="./icons/check1.png" class="check-button" alt="">
+                    </div>
+                    <p class="task-description closed" id="description" onclick="clickTask(1)">- Tags semânticas <br>- ul/li <br>- Formulários</p>
+                    <img src="./icons/opened.png" onclick="clickTask(1)" id="description_button" class="description-button" alt="opened icon">
+                </div>
+
+                <!--TASK-->
+                <div class="task closed" id="task1">
+                    <div class="task-header">
+                        <h2 class="taskt-title" onclick="clickTask(1)">Estudar HTML</h2>
+                        <img src="./icons/check1.png" class="check-button" alt="">
+                    </div>
+                    <p class="task-description closed" id="description" onclick="clickTask(1)">- Tags semânticas <br>- ul/li <br>- Formulários</p>
+                    <img src="./icons/opened.png" onclick="clickTask(1)" id="description_button" class="description-button" alt="opened icon">
+                </div>
+
+                <!--TASK-->
+                <div class="task closed" id="task1">
+                    <div class="task-header">
+                        <h2 class="taskt-title" onclick="clickTask(1)">Estudar HTML</h2>
+                        <img src="./icons/check1.png" class="check-button" alt="">
+                    </div>
+                    <p class="task-description closed" id="description" onclick="clickTask(1)">- Tags semânticas <br>- ul/li <br>- Formulários</p>
+                    <img src="./icons/opened.png" onclick="clickTask(1)" id="description_button" class="description-button" alt="opened icon">
+                </div>
+            </div>
+
+            <div class="button-icon-container">
+                <button onclick="addTask()" class="button">
+                    LIMPAR LISTA <img src="./icons/x.png" alt="x icon">
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>@pierry-savio</p>
+    </footer>
+
+    <script src="./js/list.js"></script>
+</body>
+</html>

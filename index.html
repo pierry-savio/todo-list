@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-List</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <!--FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,11 +19,11 @@
                     <li><img src="./icons/moon.png" alt=""></li>
                 </a>
 
-                <a href="">
+                <a href="index.html">
                     <li><img src="./icons/plus.png" alt=""></li>
                 </a>
 
-                <a href="">
+                <a href="list.html">
                     <li><img src="./icons/paper.png" alt=""></li>
                 </a>
             </ul>
@@ -31,21 +31,29 @@
     </header>
 
     <main>
-        <div class="main-title-container">
-            <h1>TODO LIST</h1>
-            <img src="./icons/check3.png" alt="check icon">
-        </div>
-        <input type="text" placeholder="título da tarefa...">
-        <input type="text" placeholder="descrição da tarefa...">
-        <button>Adicionar</button>
-        <div>
-            <p>Tarefa adicionada!</p>
-            <img src="./icons/check2.png" alt="">
+        <div class="container">
+            <div class="main-title-container">
+                <h1>TODO LIST</h1>
+                <img src="./icons/check3.png" alt="check icon">
+            </div>
+
+            <div class="inputs-container">
+                <input type="text" placeholder="título da tarefa..." class="title-input input" onclick="close_output_message()">
+                <textarea class="description-input input" name="description" id="description" placeholder="descrição da tarefa..." maxlength="1000" onclick="close_output_message()"></textarea>
+                <button onclick="addTask()">ADICIONAR</button>
+            </div>
+
+            <div class="output-message-container closed" id="output_message">
+                <p>Tarefa adicionada!</p>
+                <img src="./icons/check2.png" alt="check icon">
+            </div>
         </div>
     </main>
 
     <footer>
         <p>@pierry-savio</p>
     </footer>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
