@@ -12,12 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav>
             <ul>
-                <a href="">
-                    <li><img src="./icons/moon.png" alt=""></li>
-                </a>
+                <li><img src="./icons/moon.png" alt=""></li>
 
                 <a href="index.html">
                     <li><img src="./icons/plus.png" alt=""></li>
@@ -38,7 +36,7 @@
             </div>
 
             <div class="inputs-container">
-                <input type="text" placeholder="título da tarefa..." class="title-input input" onclick="close_output_message()" id="task_title">
+                <input type="text" placeholder="título da tarefa..." maxlength="35" class="title-input input" onclick="close_output_message()" id="task_title">
                 <textarea class="description-input input" name="description" id="task_description" placeholder="descrição da tarefa..." maxlength="1000" onclick="close_output_message()"></textarea>
                 <button onclick="addTask()">ADICIONAR</button>
             </div>
