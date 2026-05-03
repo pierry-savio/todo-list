@@ -1,13 +1,17 @@
+if (localStorage.getItem(0) === null){
+  cleanList();
+}
+
 function cleanList(){
   localStorage.clear();
   const tasks_container = document.getElementById("tasks-container");
   tasks_container.innerHTML = "";
 }
 
-
 function loadTasks(){
   for (let i = 0; i<localStorage.length; i++){
     let value = localStorage.getItem(i);
+    console.log("value: " + value);
     const spliter = value.indexOf("!");
     const title    = value.slice(0, spliter);
     const description = value.slice(spliter + 1);
