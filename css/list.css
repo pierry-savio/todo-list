@@ -31,18 +31,14 @@ h1{
 }
 
 body{
-    height: 100vh;
     background-color: var(--background);
+    min-height: 100vh;
 
     /*FONT*/
     font-family: "Elms Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 
@@ -54,7 +50,8 @@ _____________________ ⬇ ⬇ ⬇ __________________________
 header{
     background-color: var(--main);
     padding: 0.9rem;
-    position: absolute;
+    position: fixed;
+    top: 0;
     width: 100%;
 }
 
@@ -100,7 +97,7 @@ main{
     justify-content: center;
     align-items: center;
     margin-top: 110px;
-    height: 90%;
+    padding-bottom: 80px;
 }
 
 main .container{
@@ -165,6 +162,7 @@ main .tasks-container .task.closed{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
     align-items: left;
     gap: 0px;
     transition: .3s ease;
@@ -176,6 +174,7 @@ main .tasks-container .task.opened{
     border-radius: 22px;
     padding: 0 0 0 0;
     display: flex;
+    cursor: pointer;
     flex-direction: column;
     justify-content: center;
     align-items: left;
@@ -226,8 +225,8 @@ main .tasks-container .task p.closed{
 
 main .tasks-container .task .description-button {
     height: 20px;
-    width: 20px; 
-    margin: auto;
+    width: 20px;
+    margin-left: 47%;
 }
 
 main .button-icon-container button{
@@ -269,10 +268,13 @@ ___________________ F O O T E R ______________________
 _____________________ ⬇ ⬇ ⬇ __________________________
 */
 footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
     font-weight: 300;
-    height: 100px;
-    color: var(--tarefas);
+    padding: 8px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--main);
 }
