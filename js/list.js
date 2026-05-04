@@ -5,7 +5,9 @@ if (localStorage.getItem(0) === null){
 function cleanList(){
   localStorage.clear();
   const tasks_container = document.getElementById("tasks-container");
-  tasks_container.innerHTML = "";
+  if (tasks_container){
+    tasks_container.remove();
+  }
 }
 
 function loadTasks(){
@@ -22,8 +24,16 @@ function loadTasks(){
 loadTasks();
 
 function newTask(id, title, description){
-  let task = document.createElement("div");
+  
+  let tasks_container = document.getElementById("tasks-container");
 
+  if (!tasks_container){
+    tasks_container = document.createElement("div");
+    tasks_container.innerHTML = `<div class="tasks-container" id="tasks-container"`;
+  }
+
+  let task = document.createElement("div");
+  
   task.className = "task opened";
 
   task.innerHTML =
@@ -48,7 +58,6 @@ function newTask(id, title, description){
   
     </div>`;
 
-    tasks_container = document.getElementById("tasks-container");
     tasks_container.appendChild(task);
 }
 
@@ -57,20 +66,29 @@ function clickTask(id){
   let description = document.getElementById("description-" + id);
   let description_button = document.getElementById("description_button-" + id);
   
-  if (task.classList.contains("closed")){
-    task.classList.replace("closed", "opened");
-    description.classList.replace("closed", "opened");
-    description_button.src = "./icons/opened.png";
-  }
-  else{
-    task.classList.replace("opened", "closed");
-    description.classList.replace("opened", "closed");
-    description_button.src = "./icons/closed.png";
+  if (task){
+    if (task.classList.contains("closed")){
+      task.classList.replace("closed", "opened");
+      description.classList.replace("closed", "opened");
+      description_button.src = "./icons/opened.png";
+    }
+    else{
+      task.classList.replace("opened", "closed");
+      description.classList.replace("opened", "closed");
+      description_button.src = "./icons/closed.png";
+    }
   }
 }
 
 function checkTask(id){
   let task = document.getElementById("task-" + id);
   task.innerHTML = "";
+  task.remove();
   localStorage.removeItem(id);
+
+  let tasks_container = document.getElementById("tasks-container");
+
+  if (localStorage.length < 1 && tasks_container){
+    tasks_container.remove();
+  }
 }

@@ -166,7 +166,6 @@ main .tasks-container .task.closed{
     align-items: left;
     gap: 0px;
     transition: .3s ease;
-    
 }
 
 main .tasks-container .task.opened{
@@ -185,7 +184,6 @@ main .tasks-container .task.opened{
 
 main .tasks-container .task .task-header{
     display: flex;
-    max-width: 100%;
     background-color: var(--main);
     height: 40px;
     border-radius: 22px;
@@ -210,9 +208,15 @@ main .tasks-container .task .task-header .check-button:hover{
 
 main .tasks-container .task p.opened{
     margin-left: 12px;
+    margin-right: 12px;
     font-weight: 300;
     color: var(--main);
     font-size: 16px;
+
+    word-wrap: break-word;      
+    overflow-wrap: break-word;  
+    word-break: break-word;   
+    
     transition: .3s ease;
 }
 
@@ -221,6 +225,11 @@ main .tasks-container .task p.closed{
     font-weight: 300;
     color: var(--main);
     font-size: 0px;
+    
+    word-wrap: break-word;      
+    overflow-wrap: break-word;  
+    word-break: break-word; 
+
     transition: .3s ease;
 }
 
