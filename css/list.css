@@ -238,6 +238,12 @@ main .tasks-container .task .task-header{
     }
 }
 
+main .tasks-container .task .task-header .task-title{
+    word-wrap: break-word;      
+    overflow-wrap: break-word;  
+    word-break: break-word; 
+}
+
 main .tasks-container .task .task-header .check-button {
     border-radius: 50%;
     background-color: var(--check);
