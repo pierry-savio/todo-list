@@ -25,9 +25,34 @@ h1{
   --main: #38b6ff;
   --check: #0095f1;
   --limpar: #ff7070;
+  --nav-buttons: white;
+  --nav-buttons-hover: #72cbff;
+  --adicionar-shadowbox: #017ec7;
+  --texto-inputs: rgba(0, 0, 0, 0.2);
+  --input: black;
+  --inputs-background: white;
   --limpar-shadowbox: #d10000;
   --titulo-degrade-1: #0069a6;
   --titulo-degrade-2: #00e8ff;
+  --output-message: #38b6ff;
+}
+
+.dark{
+  --background: #003150;
+  --tarefas: #004c7b;
+  --main: #0069a6;
+  --check: #0095f1;
+  --limpar: #b20000;
+  --nav-buttons: #004c7b;
+  --nav-buttons-hover: #00304e;
+  --texto-inputs: rgba(255, 255, 255, 0.5);
+  --input: white;
+  --inputs-background: #004c7b;
+  --adicionar-shadowbox: #00446b;
+  --limpar-shadowbox: #7b0000;
+  --titulo-degrade-1: #bef7ff;
+  --titulo-degrade-2: #00e8ff;
+  --output-message: white;
 }
 
 body{
@@ -43,6 +68,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: .5s ease;
 }
 
 
@@ -67,7 +93,7 @@ header nav ul li {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: var(--nav-buttons);
     padding: 0.5rem;
     border-radius: 50%;
     transition: .2s ease;
@@ -75,7 +101,7 @@ header nav ul li {
 
 header nav ul li:hover {
     transform: scale(1.05);
-    background-color: var(--tarefas);
+    background-color: var(--nav-buttons-hover);
 }
 
 header nav ul li:active {
@@ -176,7 +202,9 @@ main .inputs-container .input{
     border-radius: 20px;
     border: none;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+    background-color: var(--inputs-background);
     padding: 18px 18px 18px 18px;
+    color: var(--input);
     font-family: "Elms Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -184,7 +212,7 @@ main .inputs-container .input{
 }
 
 main .inputs-container .input::placeholder{
-    color: rgba(0, 0, 0, 0.2);
+    color: var(--texto-inputs);
     font-weight: 300;
     font-size: 15px;
 }
@@ -222,7 +250,7 @@ main .inputs-container button{
     color: white;
     background-color: var(--main);
     border: none;
-    box-shadow: 0 6px 0 0 var(--titulo-degrade-1);
+    box-shadow: 0 6px 0 0 var(--adicionar-shadowbox);
     margin-bottom: 20px;
 }
 
@@ -239,7 +267,7 @@ main .inputs-container button:active{
     main .inputs-container button{
         height: 80px;
         font-size: 25px;
-        box-shadow: 0 12px 0 0 var(--titulo-degrade-1);
+        box-shadow: 0 12px 0 0 var(--adicionar-shadowbox);
     }
 
     main .inputs-container button:hover{
@@ -258,7 +286,7 @@ main .output-message-container.opened{
     justify-content: center;
     align-items: center;
     gap: 0.3rem;
-    color: var(--main);
+    color: var(--output-message);
     font-weight: 500;
     text-align: center;
     transform: scale(1.1);

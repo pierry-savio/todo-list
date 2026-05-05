@@ -42,3 +42,24 @@ function open_output_message(){
 function close_output_message(){
     output_message.classList.replace("opened", "closed");
 }
+
+function turnTheme() {
+  const root = document.documentElement;
+
+  const nav_theme_button = document.getElementById("nav-theme-button");
+  const nav_add_button = document.getElementById("nav-add-button");
+  const nav_tasks_button = document.getElementById("nav-tasks-button"); 
+
+  root.classList.toggle("dark");
+
+  if (root.className === "dark"){
+    nav_theme_button.src = "./icons/sun-white.png";
+    nav_add_button.src = "./icons/plus-white.png";
+    nav_tasks_button.src = "./icons/paper-white.png";
+  }
+  else{
+    nav_theme_button.src = "./icons/moon.png";
+    nav_add_button.src = "./icons/plus.png";
+    nav_tasks_button.src = "./icons/paper.png";
+  }
+} 
