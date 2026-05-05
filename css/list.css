@@ -87,6 +87,17 @@ header nav ul{
     padding: 0 30px 0 30px;
 }
 
+@media (orientation: landscape){
+    header nav ul img{
+        width: 50px;
+    }
+
+    header nav ul{
+        justify-content: center;
+        gap: 18rem;
+    }
+}
+
 /*
 _____________________ M A I N ________________________
 _____________________ ⬇ ⬇ ⬇ __________________________
@@ -101,7 +112,6 @@ main{
 }
 
 main .container{
-    width: 75%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -137,6 +147,17 @@ main .main-title-container h1 {
 main .main-title-container img{
     width: 43px;
     height: 43px;
+}
+
+@media (orientation: landscape){
+    main .main-title-container h1{
+        font-size: 80px;
+    }
+
+    main .main-title-container img{
+        width: 68px;
+        height: 68px;
+    }
 }
 
 /*
@@ -271,6 +292,24 @@ main .button:hover{
 main .button:active{
     box-shadow: 0 0 0 0 transparent;
     transform: translateY(6px);
+}
+
+@media (orientation: landscape){
+    main .button{
+        background-color: var(--limpar);
+        height: 80px;
+        font-size: 25px;
+        box-shadow: 0 12px 0 0 var(--limpar-shadowbox);
+    }
+
+    main .button:hover{
+        background-color: #f94b4b;
+    }
+
+    main .button:active{
+        box-shadow: 0 0 0 0 transparent;
+        transform: translateY(12px);
+    }
 }
 
 /*

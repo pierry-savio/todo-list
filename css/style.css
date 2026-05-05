@@ -51,14 +51,6 @@ ___________________ H E A D E R ______________________
 _____________________ ⬇ ⬇ ⬇ __________________________
 */
 
-.light{
-    background-color: var(--main);
-}
-
-.dark{
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
 header{
     padding: 0.9rem;
     position: absolute;
@@ -98,6 +90,17 @@ header nav ul{
     padding: 0 30px 0 30px;
 }
 
+@media (orientation: landscape){
+    header nav ul img{
+        width: 50px;
+    }
+
+    header nav ul{
+        justify-content: center;
+        gap: 18rem;
+    }
+}
+
 /*
 _____________________ M A I N ________________________
 _____________________ ⬇ ⬇ ⬇ __________________________
@@ -113,7 +116,7 @@ main{
 
 main .container{
     width: 75%;
-    max-width: 500px;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -123,6 +126,7 @@ main .main-title-container{
     display: flex;
     align-items: center;
     justify-content: center;
+    
     gap: 0.5rem;
 }
 
@@ -150,6 +154,18 @@ main .main-title-container img{
     height: 39px;
 }
 
+@media (orientation: landscape){
+    main .main-title-container h1{
+        font-size: 80px;
+    }
+
+    main .main-title-container img{
+        width: 59px;
+        height: 59px;
+    }
+}
+
+
 main .inputs-container{
     display: flex;
     flex-direction: column;
@@ -170,6 +186,13 @@ main .inputs-container .input{
 main .inputs-container .input::placeholder{
     color: rgba(0, 0, 0, 0.2);
     font-weight: 300;
+    font-size: 15px;
+}
+
+@media (orientation: landscape){
+    main .inputs-container .input::placeholder{
+        font-size: 20px;
+    }
 }
 
 main .inputs-container .title-input{
@@ -178,6 +201,16 @@ main .inputs-container .title-input{
 
 main .inputs-container .description-input{
     height: 130px;
+}
+
+@media (orientation: landscape){
+    main .inputs-container .title-input{
+        height: 60px;
+    }
+
+    main .inputs-container .description-input{
+        height: 150px;
+    }
 }
 
 main .inputs-container button{
@@ -202,6 +235,23 @@ main .inputs-container button:active{
     transform: translateY(6px);
 }
 
+@media (orientation: landscape){
+    main .inputs-container button{
+        height: 80px;
+        font-size: 25px;
+        box-shadow: 0 12px 0 0 var(--titulo-degrade-1);
+    }
+
+    main .inputs-container button:hover{
+        background-color: var(--check);
+    }
+
+    main .inputs-container button:active{
+        box-shadow: 0 0 0 0 transparent;
+        transform: translateY(12px);
+    }
+}
+ 
 main .output-message-container.opened{
     display: flex;
     flex-direction: row;
@@ -212,6 +262,7 @@ main .output-message-container.opened{
     font-weight: 500;
     text-align: center;
     transform: scale(1.1);
+    font-size: 16px;
     transition: 0.5s ease;
 }
 
@@ -221,11 +272,22 @@ main .output-message-container.closed{
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 14px;
     gap: 0.3rem;
     color: var(--main);
     font-weight: 500;
     opacity: 0;
     transition: 0.5s ease;
+}
+
+@media (orientation: landscape){
+    main .output-message-container.opened{
+        font-size: 20px;
+    }
+
+    main .output-message-container.closed{
+        font-size: 18px;
+    }
 }
 
 main .output-message-container img{
