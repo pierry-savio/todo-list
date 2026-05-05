@@ -112,7 +112,8 @@ main{
 }
 
 main .container{
-    max-width: 500px;
+    width: 75%;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -175,6 +176,13 @@ main .tasks-container{
     margin-bottom: 8px;
 }
 
+@media (orientation: landscape){
+    main .tasks-container{
+        box-shadow: 0 18px 0 0 var(--main);
+        margin-bottom: 32px;
+    }
+}
+
 main .tasks-container .task.closed{
     background-color: white;
     box-shadow: 0 8px 0 0 rgb(214, 214, 214);
@@ -215,6 +223,21 @@ main .tasks-container .task .task-header{
     font-size: 12px;
 }
 
+@media (orientation: landscape){
+    main .tasks-container .task .task-header{
+        height: 60px;
+        border-radius: 30px;
+    }
+
+    main .tasks-container .task.closed, main .tasks-container .task.opened{
+        border-radius: 30px;
+    }
+
+    main .tasks-container .task .task-header{
+        font-size: 20px;
+    }
+}
+
 main .tasks-container .task .task-header .check-button {
     border-radius: 50%;
     background-color: var(--check);
@@ -252,6 +275,18 @@ main .tasks-container .task p.closed{
     word-break: break-word; 
 
     transition: .3s ease;
+}
+
+@media (orientation: landscape){
+    main .tasks-container .task p.opened{
+        font-size: 22px;
+        margin-left: 22px;
+    }
+
+    main .tasks-container .task p.closed{
+        font-size: 0px;
+        margin-left: 22px;
+    }
 }
 
 main .tasks-container .task .description-button {
