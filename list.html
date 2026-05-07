@@ -15,14 +15,14 @@
     <header>
         <nav>
             <ul>
-                <li><img src="./icons/moon.png" alt=""></li>
+                <li class="nav-button" onclick="turnTheme()"><img src="./icons/moon.png" alt="" id="nav-theme-button"></li>
 
-                <a href="index.html">
-                    <li><img src="./icons/plus.png" alt=""></li>
+                <a href="index.html" class="nav-button">
+                    <li><img src="./icons/plus.png" alt="" id="nav-add-button"></li>
                 </a>
 
-                <a href="list.html">
-                    <li><img src="./icons/paper.png" alt=""></li>
+                <a href="list.html" class="nav-button">
+                    <li><img src="./icons/paper.png" alt="" id="nav-tasks-button"></li>
                 </a>
             </ul>
         </nav>
@@ -39,7 +39,9 @@
                 <!--TASKS-->
             </div>
 
-            <div class="button-icon-container">
+            <h2 class="empty-list-message closed" id="empty-list-message">Sua lista está vazia :(</h2>
+
+            <div class="button-icon-container opened" id="button-icon-container">
                 <button onclick="cleanList()" class="button">
                     LIMPAR LISTA <img src="./icons/x.png" alt="x icon">
                 </button>

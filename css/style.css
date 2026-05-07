@@ -221,6 +221,10 @@ main .inputs-container .input::placeholder{
     main .inputs-container .input::placeholder{
         font-size: 20px;
     }
+
+    main .inputs-container .input{
+        font-size: 20px;
+    }
 }
 
 main .inputs-container .title-input{

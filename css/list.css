@@ -25,9 +25,42 @@ h1{
   --main: #38b6ff;
   --check: #0095f1;
   --limpar: #ff7070;
+  --nav-buttons: white;
+  --nav-buttons-hover: #72cbff;
+  --adicionar-shadowbox: #017ec7;
+  --texto-inputs: rgba(0, 0, 0, 0.2);
+  --input: black;
+  --inputs-background: white;
   --limpar-shadowbox: #d10000;
   --titulo-degrade-1: #0069a6;
   --titulo-degrade-2: #00e8ff;
+  --output-message: #38b6ff;
+  --task-header: #38b6ff;
+  --task-description: #ffffff;
+  --task-description-color: #38b6ff;
+  --task-boxshadow: rgb(199, 199, 199);
+}
+
+.dark{
+  --background: #003150;
+  --tarefas: #004c7b;
+  --main: #0069a6;
+  --check: #0095f1;
+  --limpar: #b20000;
+  --nav-buttons: #004c7b;
+  --nav-buttons-hover: #00304e;
+  --texto-inputs: rgba(255, 255, 255, 0.5);
+  --input: white;
+  --inputs-background: #004c7b;
+  --adicionar-shadowbox: #00446b;
+  --limpar-shadowbox: #7b0000;
+  --titulo-degrade-1: #bef7ff;
+  --titulo-degrade-2: #00e8ff;
+  --output-message: white;
+  --task-header: #0084d1;
+  --task-description: #00639d;
+  --task-description-color: white;
+  --task-boxshadow: #003452;
 }
 
 body{
@@ -39,6 +72,8 @@ body{
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
+
+    transition: .5s ease;
 }
 
 
@@ -64,7 +99,7 @@ header nav ul li {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: var(--nav-buttons);
     padding: 0.5rem;
     border-radius: 50%;
     transition: .2s ease;
@@ -72,7 +107,7 @@ header nav ul li {
 
 header nav ul li:hover {
     transform: scale(1.05);
-    background-color: var(--tarefas);
+    background-color: var(--nav-buttons-hover);
 }
 
 header nav ul li:active {
@@ -184,8 +219,8 @@ main .tasks-container{
 }
 
 main .tasks-container .task.closed{
-    background-color: white;
-    box-shadow: 0 8px 0 0 rgb(214, 214, 214);
+    background-color: var(--task-description);
+    box-shadow: 0 8px 0 0 var(--task-boxshadow);
     border-radius: 22px;
     padding: 0 0 0 0;
     display: flex;
@@ -198,8 +233,8 @@ main .tasks-container .task.closed{
 }
 
 main .tasks-container .task.opened{
-    background-color: white;
-    box-shadow: 0 8px 0 0 rgb(214, 214, 214);
+    background-color: var(--task-description);
+    box-shadow: 0 8px 0 0 var(--task-boxshadow);
     border-radius: 22px;
     padding: 0 0 0 0;
     display: flex;
@@ -213,7 +248,7 @@ main .tasks-container .task.opened{
 
 main .tasks-container .task .task-header{
     display: flex;
-    background-color: var(--main);
+    background-color: var(--task-header);
     height: 40px;
     border-radius: 22px;
     justify-content: space-between;
@@ -260,7 +295,7 @@ main .tasks-container .task p.opened{
     margin-left: 12px;
     margin-right: 12px;
     font-weight: 300;
-    color: var(--main);
+    color: var(--task-description-color);
     font-size: 16px;
 
     word-wrap: break-word;      
@@ -273,7 +308,7 @@ main .tasks-container .task p.opened{
 main .tasks-container .task p.closed{
     margin-left: 12px;
     font-weight: 300;
-    color: var(--main);
+    color: var(--task-description-color);
     font-size: 0px;
     
     word-wrap: break-word;      
@@ -299,6 +334,18 @@ main .tasks-container .task .description-button {
     height: 20px;
     width: 20px;
     margin-left: 47%;
+}
+
+main .button-icon-container{
+    transition: 0.5s ease;
+}
+
+main .button-icon-container.closed{
+    opacity: 0;
+}
+
+main .button-icon-container.opened{
+    opacity: 100%;
 }
 
 main .button-icon-container button{
@@ -350,6 +397,25 @@ main .button:active{
     main .button:active{
         box-shadow: 0 0 0 0 transparent;
         transform: translateY(12px);
+    }
+}
+
+.empty-list-message.opened{
+    color: var(--task-description-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 80px;
+}
+
+.empty-list-message.closed{
+    display: none;
+}
+
+@media (orientation: landscape){
+    .empty-list-message.opened{
+        font-size: 30px;
     }
 }
 

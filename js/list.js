@@ -5,19 +5,27 @@ if (localStorage.getItem(0) === null){
 function cleanList(){
   localStorage.clear();
   const tasks_container = document.getElementById("tasks-container");
+  const button_icon_container = document.getElementById("button-icon-container");
+  const empty_list_message = document.getElementById("empty-list-message");
+
   if (tasks_container){
     tasks_container.remove();
   }
+
+  button_icon_container.classList.replace("opened", "closed");
+  empty_list_message.classList.replace("closed", "opened");
 }
 
 function loadTasks(){
   for (let i = 0; i<localStorage.length; i++){
-    let value = localStorage.getItem(i);
-    console.log("value: " + value);
-    const spliter = value.indexOf("!");
-    const title    = value.slice(0, spliter);
-    const description = value.slice(spliter + 1);
-    newTask(i, title, description);
+    if (localStorage.getItem(i) !== "dark" || localStorage.getItem(i) !== "light"){
+      let value = localStorage.getItem(i);
+      console.log("value: " + value);
+      const spliter = value.indexOf("!");
+      const title    = value.slice(0, spliter);
+      const description = value.slice(spliter + 1);
+      newTask(i, title, description);
+    }
   }
 }
 
@@ -81,6 +89,10 @@ function clickTask(id){
 }
 
 function checkTask(id){
+ 
+  const button_icon_container = document.getElementById("button-icon-container");
+  const empty_list_message = document.getElementById("empty-list-message");
+
   let task = document.getElementById("task-" + id);
   task.innerHTML = "";
   task.remove();
@@ -90,5 +102,40 @@ function checkTask(id){
 
   if (localStorage.length < 1 && tasks_container){
     tasks_container.remove();
+    button_icon_container.classList.replace("opened", "closed");
+    empty_list_message.classList.replace("closed", "opened");
+  }
+}
+
+const root = document.documentElement;
+const nav_theme_button = document.getElementById("nav-theme-button");
+const nav_add_button = document.getElementById("nav-add-button");
+const nav_tasks_button = document.getElementById("nav-tasks-button");
+
+if (localStorage.getItem("theme") === "dark") {
+    root.classList.add("dark");
+    nav_theme_button.src = "./icons/sun-white.png";
+    nav_add_button.src = "./icons/plus-white.png";
+    nav_tasks_button.src = "./icons/paper-white.png";
+} else {
+    root.classList.remove("dark");
+    nav_theme_button.src = "./icons/moon.png";
+    nav_add_button.src = "./icons/plus.png";
+    nav_tasks_button.src = "./icons/paper.png";
+}
+
+function turnTheme() {
+  if (localStorage.getItem("theme") === "dark") {
+    localStorage.setItem("theme", "light");
+    root.classList.remove("dark");
+    nav_theme_button.src = "./icons/moon.png";
+    nav_add_button.src = "./icons/plus.png";
+    nav_tasks_button.src = "./icons/paper.png";
+  } else {
+    localStorage.setItem("theme", "dark");
+    root.classList.add("dark");
+    nav_theme_button.src = "./icons/sun-white.png";
+    nav_add_button.src = "./icons/plus-white.png";
+    nav_tasks_button.src = "./icons/paper-white.png";
   }
 }
