@@ -2,6 +2,7 @@
 
 Uma aplicação de lista de tarefas desenvolvida com **HTML**, **CSS** e **JavaScript puro**, com foco em uma interface moderna, responsiva e simples de usar.
 
+👉 Acesse a aplicação ![clicando aqui](https://pierry-savio.github.io/todo-list/) 🔗
 ## 🚀 Funcionalidades
 
 - ➕ Adicionar tarefas
