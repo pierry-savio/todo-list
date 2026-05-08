@@ -17,11 +17,7 @@ Uma aplicação de lista de tarefas desenvolvida com **HTML**, **CSS** e **JavaS
 
 ## 📸 Preview
 
-> Você pode adicionar aqui screenshots do projeto depois.
-
-```md
 ![Preview do Projeto](./preview.png)
-```
 
 ---
 
@@ -117,17 +113,6 @@ git clone https://github.com/seu-usuario/todo-list.git
 ```bash
 index.html
 ```
-
----
-
-## 📌 Melhorias Futuras
-
-- [ ] Editar tarefas
-- [ ] Sistema de categorias
-- [ ] Filtro de tarefas
-- [ ] Datas e horários
-- [ ] Drag and Drop
-- [ ] Integração com banco de dados
 
 ---
 
