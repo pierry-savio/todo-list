@@ -1,57 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo-List</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
 
     <!--FONT-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header id="header">
-        <nav>
-            <ul>
-                <li class="nav-button" onclick="turnTheme()"><img src="./icons/moon.png" alt="" id="nav-theme-button"></li>
+      <nav>
+        <ul>
+          <li class="nav-button" onclick="turnTheme()">
+            <img src="./icons/moon.png" alt="" id="nav-theme-button" />
+          </li>
 
-                <a href="index.html" class="nav-button">
-                    <li><img src="./icons/plus.png" alt="" id="nav-add-button"></li>
-                </a>
+          <a href="index.html" class="nav-button">
+            <li><img src="./icons/plus.png" alt="" id="nav-add-button" /></li>
+          </a>
 
-                <a href="list.html" class="nav-button">
-                    <li><img src="./icons/paper.png" alt="" id="nav-tasks-button"></li>
-                </a>
-            </ul>
-        </nav>
+          <a href="list.html" class="nav-button">
+            <li>
+              <img src="./icons/paper.png" alt="" id="nav-tasks-button" />
+            </li>
+          </a>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <div class="container">
-            <div class="main-title-container">
-                <h1>TODO LIST</h1>
-                <img src="./icons/check3.png" alt="check icon">
-            </div>
-
-            <div class="inputs-container">
-                <input type="text" placeholder="título da tarefa..." maxlength="35" class="title-input input" onclick="close_output_message()" id="task_title">
-                <textarea class="description-input input" name="description" id="task_description" placeholder="descrição da tarefa..." maxlength="1000" onclick="close_output_message()"></textarea>
-                <button onclick="addTask()">ADICIONAR</button>
-            </div>
-
-            <div class="output-message-container closed" id="output_message">
-                <p>Tarefa adicionada!</p>
-                <img src="./icons/check2.png" alt="check icon">
-            </div>
+      <div class="container">
+        <div class="main-title-container">
+          <h1>TODO LIST</h1>
+          <img src="./icons/check3.png" alt="check icon" />
         </div>
+
+        <div class="inputs-container">
+          <input
+            type="text"
+            placeholder="título da tarefa..."
+            maxlength="35"
+            class="title-input input"
+            onclick="close_output_message()"
+            id="task_title"
+          />
+          <textarea
+            class="description-input input"
+            name="description"
+            id="task_description"
+            placeholder="descrição da tarefa..."
+            maxlength="1000"
+            onclick="close_output_message()"
+          ></textarea>
+          <button onclick="addTask()">ADICIONAR</button>
+        </div>
+
+        <div class="output-message-container closed" id="output_message">
+          <p>Tarefa adicionada!</p>
+          <img src="./icons/check2.png" alt="check icon" />
+        </div>
+      </div>
     </main>
 
     <footer>
-        <p>@pierry-savio</p>
+      <p>@pierry-savio</p>
     </footer>
 
     <script src="./js/script.js"></script>
-</body>
+  </body>
 </html>
