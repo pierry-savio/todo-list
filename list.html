@@ -1,58 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo-List</title>
-    <link rel="stylesheet" href="./css/list.css">
+    <link rel="stylesheet" href="./css/list.css" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
 
     <!--FONT-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li class="nav-button" onclick="turnTheme()"><img src="./icons/moon.png" alt="" id="nav-theme-button"></li>
+      <nav>
+        <ul>
+          <li class="nav-button" onclick="turnTheme()">
+            <img src="./icons/moon.png" alt="" id="nav-theme-button" />
+          </li>
 
-                <a href="index.html" class="nav-button">
-                    <li><img src="./icons/plus.png" alt="" id="nav-add-button"></li>
-                </a>
+          <a href="index.html" class="nav-button">
+            <li><img src="./icons/plus.png" alt="" id="nav-add-button" /></li>
+          </a>
 
-                <a href="list.html" class="nav-button">
-                    <li><img src="./icons/paper.png" alt="" id="nav-tasks-button"></li>
-                </a>
-            </ul>
-        </nav>
+          <a href="list.html" class="nav-button">
+            <li>
+              <img src="./icons/paper.png" alt="" id="nav-tasks-button" />
+            </li>
+          </a>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <div class="container">
-            <div class="main-title-container">
-                <h1>TAREFAS</h1>
-                <img src="./icons/blue-list.png" alt="check icon">
-            </div>
-
-            <div class="tasks-container" id="tasks-container">
-                <!--TASKS-->
-            </div>
-
-            <h2 class="empty-list-message closed" id="empty-list-message">Sua lista está vazia :(</h2>
-
-            <div class="button-icon-container opened" id="button-icon-container">
-                <button onclick="cleanList()" class="button">
-                    LIMPAR LISTA <img src="./icons/x.png" alt="x icon">
-                </button>
-            </div>
+      <div class="container">
+        <div class="main-title-container">
+          <h1>TAREFAS</h1>
+          <img src="./icons/blue-list.png" alt="check icon" />
         </div>
+
+        <div class="tasks-container" id="tasks-container">
+          <!--TASKS-->
+        </div>
+
+        <h2 class="empty-list-message closed" id="empty-list-message">
+          Sua lista está vazia :(
+        </h2>
+
+        <div class="button-icon-container opened" id="button-icon-container">
+          <button onclick="cleanList()" class="button">
+            LIMPAR LISTA <img src="./icons/x.png" alt="x icon" />
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer>
-        <p>@pierry-savio</p>
+      <p>@pierry-savio</p>
     </footer>
 
     <script src="./js/list.js"></script>
-</body>
+  </body>
 </html>
