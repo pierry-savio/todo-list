@@ -8,7 +8,7 @@ const output_message = document.getElementById("output_message");
 function addTask(){
     let title = task_title.value;
     let description = task_description.value;
-    let id = localStorage.length;
+    let id = localStorage.length-1;
     let spliter = "!";
     let value = title + spliter + description;
 

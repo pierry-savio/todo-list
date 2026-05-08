@@ -1,28 +1,43 @@
-if (localStorage.getItem(0) === null){
-  cleanList();
-}
+//ELEMENTS
+const tasks_container = document.getElementById("tasks-container");
+const button_icon_container = document.getElementById("button-icon-container");
+const empty_list_message = document.getElementById("empty-list-message");
+const root = document.documentElement;
+const nav_theme_button = document.getElementById("nav-theme-button");
+const nav_add_button = document.getElementById("nav-add-button");
+const nav_tasks_button = document.getElementById("nav-tasks-button");
 
-function cleanList(){
-  localStorage.clear();
-  const tasks_container = document.getElementById("tasks-container");
-  const button_icon_container = document.getElementById("button-icon-container");
-  const empty_list_message = document.getElementById("empty-list-message");
+updateTheme();
 
-  if (tasks_container){
+if (localStorage.length < 2) {
+  if (tasks_container) {
     tasks_container.remove();
   }
-
   button_icon_container.classList.replace("opened", "closed");
   empty_list_message.classList.replace("closed", "opened");
 }
 
-function loadTasks(){
-  for (let i = 0; i<localStorage.length; i++){
-    if (localStorage.getItem(i) !== "dark" || localStorage.getItem(i) !== "light"){
-      let value = localStorage.getItem(i);
-      console.log("value: " + value);
+function cleanList() {
+  let theme = localStorage.getItem("theme");
+  localStorage.clear();
+
+  if (tasks_container) {
+    tasks_container.remove();
+  }
+  button_icon_container.classList.replace("opened", "closed");
+  empty_list_message.classList.replace("closed", "opened");
+
+  localStorage.setItem("theme", theme);
+
+  loadTasks();
+}
+
+function loadTasks() {
+  for (let i = 0; i < localStorage.length; i++) {
+    let value = localStorage.getItem(i);
+    if (value !== null) {
       const spliter = value.indexOf("!");
-      const title    = value.slice(0, spliter);
+      const title = value.slice(0, spliter);
       const description = value.slice(spliter + 1);
       newTask(i, title, description);
     }
@@ -31,22 +46,17 @@ function loadTasks(){
 
 loadTasks();
 
-function newTask(id, title, description){
-  
-  let tasks_container = document.getElementById("tasks-container");
-
-  if (!tasks_container){
+function newTask(id, title, description) {
+  if (!tasks_container) {
     tasks_container = document.createElement("div");
     tasks_container.innerHTML = `<div class="tasks-container" id="tasks-container"`;
   }
 
   let task = document.createElement("div");
-  
+
   task.className = "task opened";
 
-  task.innerHTML =
-  
-    `<div class="task closed" onclick="clickTask(${id})" id="task-${id}">
+  task.innerHTML = `<div class="task closed" onclick="clickTask(${id})" id="task-${id}">
       
       <div class="task-header">
 
@@ -66,21 +76,20 @@ function newTask(id, title, description){
   
     </div>`;
 
-    tasks_container.appendChild(task);
+  tasks_container.appendChild(task);
 }
 
-function clickTask(id){
+function clickTask(id) {
   let task = document.getElementById("task-" + id);
   let description = document.getElementById("description-" + id);
   let description_button = document.getElementById("description_button-" + id);
-  
-  if (task){
-    if (task.classList.contains("closed")){
+
+  if (task) {
+    if (task.classList.contains("closed")) {
       task.classList.replace("closed", "opened");
       description.classList.replace("closed", "opened");
       description_button.src = "./icons/opened.png";
-    }
-    else{
+    } else {
       task.classList.replace("opened", "closed");
       description.classList.replace("opened", "closed");
       description_button.src = "./icons/closed.png";
@@ -88,54 +97,43 @@ function clickTask(id){
   }
 }
 
-function checkTask(id){
- 
-  const button_icon_container = document.getElementById("button-icon-container");
-  const empty_list_message = document.getElementById("empty-list-message");
-
+function checkTask(id) {
   let task = document.getElementById("task-" + id);
   task.innerHTML = "";
   task.remove();
   localStorage.removeItem(id);
 
-  let tasks_container = document.getElementById("tasks-container");
-
-  if (localStorage.length < 1 && tasks_container){
+  if (localStorage.length < 2 && tasks_container) {
     tasks_container.remove();
     button_icon_container.classList.replace("opened", "closed");
     empty_list_message.classList.replace("closed", "opened");
   }
 }
 
-const root = document.documentElement;
-const nav_theme_button = document.getElementById("nav-theme-button");
-const nav_add_button = document.getElementById("nav-add-button");
-const nav_tasks_button = document.getElementById("nav-tasks-button");
-
-if (localStorage.getItem("theme") === "dark") {
-    root.classList.add("dark");
-    nav_theme_button.src = "./icons/sun-white.png";
-    nav_add_button.src = "./icons/plus-white.png";
-    nav_tasks_button.src = "./icons/paper-white.png";
-} else {
-    root.classList.remove("dark");
-    nav_theme_button.src = "./icons/moon.png";
-    nav_add_button.src = "./icons/plus.png";
-    nav_tasks_button.src = "./icons/paper.png";
-}
-
+//THEMES
 function turnTheme() {
   if (localStorage.getItem("theme") === "dark") {
     localStorage.setItem("theme", "light");
-    root.classList.remove("dark");
-    nav_theme_button.src = "./icons/moon.png";
-    nav_add_button.src = "./icons/plus.png";
-    nav_tasks_button.src = "./icons/paper.png";
   } else {
     localStorage.setItem("theme", "dark");
-    root.classList.add("dark");
+  }
+  updateTheme();
+}
+
+function updateTheme() {
+  if (localStorage.getItem("theme") === "dark") {
     nav_theme_button.src = "./icons/sun-white.png";
     nav_add_button.src = "./icons/plus-white.png";
     nav_tasks_button.src = "./icons/paper-white.png";
+    root.classList.add("dark");
+  } else if (localStorage.getItem("theme") === "light") {
+    nav_theme_button.src = "./icons/moon.png";
+    nav_add_button.src = "./icons/plus.png";
+    nav_tasks_button.src = "./icons/paper.png";
+    root.classList.remove("dark");
   }
+}
+
+if (localStorage.getItem("theme") === null) {
+  localStorage.setItem("theme", "dark");
 }
